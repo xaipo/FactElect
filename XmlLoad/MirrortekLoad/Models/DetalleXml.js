@@ -8,7 +8,7 @@ function Detalle() {
     this.descripcion = {value:'',tag:'descripcion'};
     this.cantidad = {value:'',tag:'cantidad'};
     this.precio_unitario = {value:'',tag:'precioUnitario'};
-    this.descuento = {value:'',tag:'descuento'};
+    this.descuento = {value:'0.00',tag:'descuento'};
     this.precio_total_sin_impuesto = {value:'',tag:'precioTotalSinImpuesto'};
     this.impuestos = {value:[],tag:'impuestos'};
 

@@ -6,8 +6,8 @@ var tarifa = require('./TarifaIva');
 function Pago() {
     this.forma_pago = {value:forma.sin_utilizacion_financiero,tag:'formaPago'};
     this.total = {value:'1',tag:'total'};
-    this.plazo = {value:'',tag:'plazo'};
-    this.unidad_tiempo = {value:'',tag:'unidadTiempo'};
+    this.plazo = {value:'30',tag:'plazo'};
+    this.unidad_tiempo = {value:'dias',tag:'unidadTiempo'};
 
 
 

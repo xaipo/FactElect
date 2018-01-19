@@ -27,9 +27,9 @@
       <totalImpuesto>
         <codigo>2</codigo>
         <codigoPorcentaje>2</codigoPorcentaje>
-        <baseImponible/>
+        <baseImponible>802.47</baseImponible>
         <tarifa>2</tarifa>
-        <valor/>
+        <valor>96.3</valor>
       </totalImpuesto>
     </totalConImpuesto>
     <propina>0.00</propina>
@@ -39,27 +39,31 @@
       <pago>
         <formaPago>01</formaPago>
         <total>1</total>
-        <plazo/>
-        <unidadTiempo/>
+        <plazo>30</plazo>
+        <unidadTiempo>dias</unidadTiempo>
       </pago>
     </pagos>
   </infoFactura>
   <detalles>
     <detalle>
-      <codigoPrincipal/>
-      <descripcion/>
-      <cantidad/>
-      <precioUnitario/>
-      <descuento/>
-      <precioTotalSinImpuesto/>
+      <codigoPrincipal>VC-019              </codigoPrincipal>
+      <descripcion>VIDRIO CORTADO 8 MM                                         </descripcion>
+      <cantidad>56.657</cantidad>
+      <precioUnitario>14.1637</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>802.47</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <baseImponible>802.47</baseImponible>
+          <tarifa>2</tarifa>
+          <valor>96.3</valor>
+        </impuesto>
+      </impuestos>
     </detalle>
-    <impuestos/>
-    <impuesto>
-      <codigo>2</codigo>
-      <codigoPorcentaje>2</codigoPorcentaje>
-      <baseImponible/>
-      <tarifa>2</tarifa>
-      <valor/>
-    </impuesto>
   </detalles>
+  <infoAdicional>
+    <campoAdicional/>
+  </infoAdicional>
 </factura>
