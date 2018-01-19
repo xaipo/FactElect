@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprabante" version="2.1.0">
+  <informacionTributaria>
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>MIRRORTECK INDUSTRIES S.A.</razonSocial>
+    <ruc>1791804287001</ruc>
+    <claveAcceso/>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>001</ptoEmi>
+    <secuencial>001</secuencial>
+    <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
+  </informacionTributaria>
+  <infoFactura>
+    <fechaEmision>1/11/18</fechaEmision>
+    <fechaEmision>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</fechaEmision>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <contribuyenteEspecial>num preguntar</contribuyenteEspecial>
+    <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+    <razonSocialComprador>INDUSTRIAS MASTER INDUMASTER S.A</razonSocialComprador>
+    <identificacionComprador>1390140858001</identificacionComprador>
+    <direccionComprador/>
+    <totalSinImpuestos>802.47</totalSinImpuestos>
+    <totalDescuento>0</totalDescuento>
+    <totalConImpuesto>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible/>
+        <tarifa>2</tarifa>
+        <valor/>
+      </totalImpuesto>
+    </totalConImpuesto>
+    <propina>0.00</propina>
+    <importeTotal/>
+    <moneda>Dolar</moneda>
+    <pagos>
+      <pago>
+        <formaPago>01</formaPago>
+        <total>1</total>
+        <plazo/>
+        <unidadTiempo/>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal/>
+      <descripcion/>
+      <cantidad/>
+      <precioUnitario/>
+      <descuento/>
+      <precioTotalSinImpuesto/>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <baseImponible/>
+          <tarifa>2</tarifa>
+          <valor/>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+</factura>
