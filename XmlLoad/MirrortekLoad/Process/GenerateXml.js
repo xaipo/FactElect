@@ -78,7 +78,8 @@ module.exports = {
             // Create an XML fragment
             // console.log(factura.total_con_impuestos.value[0]);
 
-            console.log(n);
+            console.log(n +'numero array de pagos');
+            console.log(factura.detalles.value);
             person.element('pago')
                 .ele(factura.pagos.value[i].forma_pago.tag, factura.pagos.value[i].forma_pago.value).up()
                 .ele(factura.pagos.value[i].total.tag, factura.pagos.value[i].total.value).up()
