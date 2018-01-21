@@ -34,16 +34,16 @@ function Factura() {
     this.total_descuento={value:'', tag:'totalDescuento'};
     var impuesto= new ImpuestoXml();
     this.total_con_impuestos={value:[], tag:'totalConImpuestos'};
-    this.total_con_impuestos.value.push(impuesto);
+   // this.total_con_impuestos.value.push(impuesto);
     this.propina={value:'0.00', tag:'propina'};
     this.importe_total={value:'', tag:'importeTotal'};
     this.moneda={value:'Dolar', tag:'moneda'};
     var pago= new Pago();
     this.pagos={value:[], tag:'pagos'};
-    this.pagos.value.push(pago)
+   // this.pagos.value.push(pago)
     var detalle= new Detalle();
     this.detalles={value:[], tag:'detalles'};
-    this.detalles.value.push(detalle)
+    //this.detalles.value.push(detalle)
     var adicional= Adicional();
     this.info_adicional={value:[], tag:'infoAdicional'};
     this.info_adicional.value.push(adicional);

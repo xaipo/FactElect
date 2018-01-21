@@ -6,7 +6,7 @@ var wtiteXml = require('./SaveDocument');
 module.exports = {
 
     generateFactura: function (factura) {
-        console.log("generar Factura");
+        console.log("generar Factura"+'-'+factura.secuencial.value);
 
         var n = factura.total_con_impuestos.value.length;
         var totalImpuesto = {};
@@ -29,7 +29,7 @@ module.exports = {
         xml.ele(factura.codigo_documento.tag, factura.codigo_documento.value);
         xml.ele(factura.establecimiento.tag, factura.establecimiento.value);
         xml.ele(factura.punto_emision.tag, factura.punto_emision.value);
-        xml.ele(factura.secuencial.tag, factura.punto_emision.value);
+        xml.ele(factura.secuencial.tag, factura.secuencial.value);
         xml.ele(factura.direccion_matriz.tag, factura.direccion_matriz.value);
 
         xml.up().ele('infoFactura')
@@ -73,13 +73,14 @@ module.exports = {
 //parte de pagos
         person = builder.create('pagos');
 
-        n = factura.detalles.value.length;
+        n = factura.pagos.value.length;
         for (var i = 0; i < n; i++) {
             // Create an XML fragment
             // console.log(factura.total_con_impuestos.value[0]);
 
             console.log(n +'numero array de pagos');
-            console.log(factura.detalles.value);
+            console.log(factura.pagos.value[i].forma_pago.tag +'tag' +factura.secuencial.value);
+
             person.element('pago')
                 .ele(factura.pagos.value[i].forma_pago.tag, factura.pagos.value[i].forma_pago.value).up()
                 .ele(factura.pagos.value[i].total.tag, factura.pagos.value[i].total.value).up()
@@ -118,7 +119,7 @@ module.exports = {
             ;
             var item2 = item.ele('impuestos');
 
-            m = factura.detalles.value.length;
+            m = factura.detalles.value[i].impuestos.value.length;
             for (var j = 0; j < m; j++) {
                 // Create an XML fragment
                 // console.log(factura.total_con_impuestos.value[0]);
@@ -126,11 +127,11 @@ module.exports = {
                // console.log(person.children);
 
                 item2.ele('impuesto')
-                    .ele(factura.total_con_impuestos.value[j].codigo.tag, factura.total_con_impuestos.value[j].codigo.value).up()
-                    .ele(factura.total_con_impuestos.value[j].codigo_porcentaje.tag, factura.total_con_impuestos.value[j].codigo_porcentaje.value).up()
-                    .ele(factura.total_con_impuestos.value[j].base_imponible.tag, factura.total_con_impuestos.value[j].base_imponible.value).up()
-                    .ele(factura.total_con_impuestos.value[j].tarifa.tag, factura.total_con_impuestos.value[j].tarifa.value).up()
-                    .ele(factura.total_con_impuestos.value[j].valor.tag, factura.total_con_impuestos.value[j].valor.value)
+                    .ele(factura.detalles.value[i].impuestos.value[j].codigo.tag, factura.detalles.value[i].impuestos.value[j].codigo.value).up()
+                    .ele(factura.detalles.value[i].impuestos.value[j].codigo_porcentaje.tag, factura.detalles.value[i].impuestos.value[j].codigo_porcentaje.value).up()
+                    .ele(factura.detalles.value[i].impuestos.value[j].base_imponible.tag, factura.detalles.value[i].impuestos.value[j].base_imponible.value).up()
+                    .ele(factura.detalles.value[i].impuestos.value[j].tarifa.tag, factura.detalles.value[i].impuestos.value[j].tarifa.value).up()
+                    .ele(factura.detalles.value[i].impuestos.value[j].valor.tag, factura.detalles.value[i].impuestos.value[j].valor.value)
                 ;
 //impuestos detalle de factura por cada producto
 
@@ -149,7 +150,7 @@ module.exports = {
 
         person = builder.create('infoAdicional');
 
-        n = factura.detalles.value.length;
+        n = factura.info_adicional.value.length;
         for (var i = 0; i < n; i++) {
             // Create an XML fragment
             // console.log(factura.total_con_impuestos.value[0]);
