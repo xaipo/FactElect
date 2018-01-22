@@ -13,15 +13,20 @@ var wtiteXml=require('./Process/SaveDocument');
 var moveFile=require('./Process/RunCommand');
 var date=require('./Process/datesFormater');
 var factura=require('./Process/ProcessFactura');
+var clients=require('./Process/LoadClients');
 XLSX = require('xlsx');
 
 var xls;
 
+var clientes;
+
 var job = new CronJob({
     cronTime: '* * * * * *',
     onTick: function () {
+        clientes=clients.loadClients();
+   var facturaProcessed=factura.processFactura(clientes);
 
-   var facturaProcessed=factura.processFactura();
+   //console.log(clientes.get())
       //  console.log(facturaProcessed);
 // pipe from stream
 

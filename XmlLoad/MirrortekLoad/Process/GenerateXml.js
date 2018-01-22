@@ -3,6 +3,7 @@
  */
 var builder = require('xmlbuilder');
 var wtiteXml = require('./SaveDocument');
+var HashMap = require('hashmap');
 module.exports = {
 
     generateFactura: function (factura) {
@@ -36,7 +37,7 @@ module.exports = {
             .ele(factura.fecha_emision.tag, factura.fecha_emision.value).up()
             .ele(factura.direccion_establecimiento.tag, factura.direccion_establecimiento.value).up()
             .ele(factura.obligado_llevar_contabilidad.tag, factura.obligado_llevar_contabilidad.value).up()
-            .ele(factura.contribuyente_especial.tag, factura.contribuyente_especial.value).up()
+            //.ele(factura.contribuyente_especial.tag, factura.contribuyente_especial.value).up()
             .ele(factura.tipo_identifiacion_comprador.tag, factura.tipo_identifiacion_comprador.value).up()
             .ele(factura.razon_social_comprador.tag, factura.razon_social_comprador.value).up()
             .ele(factura.identificacion_comprador.tag, factura.identificacion_comprador.value).up()
@@ -155,8 +156,10 @@ module.exports = {
             // Create an XML fragment
             // console.log(factura.total_con_impuestos.value[0]);
 
+            var nomb=factura.info_adicional.value[i].adicional.tag;
+            var val=factura.info_adicional.value[i].adicional.nombre;
            // console.log(n);
-            person.element('campoAdicional')
+            person.element('campoAdicional',{nombre:val},factura.info_adicional.value[i].adicional.value)
 
             ;
             // Import the root node of the fragment after

@@ -23,7 +23,7 @@ function Factura() {
     this.secuencial = {value:'', tag:'secuencial'};
     this.direccion_matriz = {value:info_tributaria.direccion_matriz, tag:'dirMatriz'};
     this.fecha_emision = {value:'', tag:'fechaEmision'};
-    this.direccion_establecimiento = {value:info_tributaria.establecimientos[0].direccion, tag:'fechaEmision'};
+    this.direccion_establecimiento = {value:info_tributaria.establecimientos[0].direccion, tag:'dirEstablecimiento'};
     this.obligado_llevar_contabilidad = {value:'SI', tag:'obligadoContabilidad'};
     this.contribuyente_especial = {value:'num preguntar', tag:'contribuyenteEspecial'};
     this.tipo_identifiacion_comprador = {value:id_proveedor.venta_consumidor_final, tag:'tipoIdentificacionComprador'};
@@ -46,7 +46,7 @@ function Factura() {
     //this.detalles.value.push(detalle)
     var adicional= Adicional();
     this.info_adicional={value:[], tag:'infoAdicional'};
-    this.info_adicional.value.push(adicional);
+    //this.info_adicional.value.push(adicional);
 }
 
 
