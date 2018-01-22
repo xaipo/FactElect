@@ -4,10 +4,12 @@
 var builder = require('xmlbuilder');
 var wtiteXml = require('./SaveDocument');
 var HashMap = require('hashmap');
+var log=require('./Log');
+var validation=require('./validateParameters');
 module.exports = {
 
     generateFactura: function (factura) {
-        console.log("generar Factura"+'-'+factura.secuencial.value);
+     //   console.log("generar Factura"+'-'+factura.secuencial.value);
 
         var n = factura.total_con_impuestos.value.length;
         var totalImpuesto = {};
@@ -26,12 +28,20 @@ module.exports = {
         xml.ele(factura.tipo_emision.tag, factura.tipo_emision.value);
         xml.ele(factura.razon_social.tag, factura.razon_social.value);
         xml.ele(factura.ruc.tag, factura.ruc.value);
-        xml.ele(factura.clave_ccesso.tag, factura.clave_ccesso.value);
+        //xml.ele(factura.clave_ccesso.tag, factura.clave_ccesso.value);
         xml.ele(factura.codigo_documento.tag, factura.codigo_documento.value);
         xml.ele(factura.establecimiento.tag, factura.establecimiento.value);
         xml.ele(factura.punto_emision.tag, factura.punto_emision.value);
-        xml.ele(factura.secuencial.tag, factura.secuencial.value);
+      //  if(factura.secuencial.length<9){
+        factura.secuencial.value=validation.secuencial(factura.secuencial.value);
+            xml.ele(factura.secuencial.tag, factura.secuencial.value);
+       // }
+
         xml.ele(factura.direccion_matriz.tag, factura.direccion_matriz.value);
+        factura.fecha_emision.value=validation.dateCero(factura.fecha_emision.value);
+
+        factura.total_descuento.value=validation.fixedDecimal(factura.total_descuento.value);
+        factura.total_sin_impuestos.value=validation.fixedDecimal(factura.total_sin_impuestos.value);
 
         xml.up().ele('infoFactura')
             .ele(factura.fecha_emision.tag, factura.fecha_emision.value).up()
@@ -51,7 +61,7 @@ module.exports = {
         var n = factura.total_con_impuestos.value.length;
         for (var i = 0; i < n; i++) {
             // Create an XML fragment
-
+            factura.total_con_impuestos.value[i].valor.value=validation.fixedDecimal(factura.total_con_impuestos.value[i].valor.value);
 
             person.element('totalImpuesto')
                 .ele(factura.total_con_impuestos.value[i].codigo.tag, factura.total_con_impuestos.value[i].codigo.value).up()
@@ -79,9 +89,9 @@ module.exports = {
             // Create an XML fragment
             // console.log(factura.total_con_impuestos.value[0]);
 
-            console.log(n +'numero array de pagos');
-            console.log(factura.pagos.value[i].forma_pago.tag +'tag' +factura.secuencial.value);
-
+            //console.log(n +'numero array de pagos');
+           // console.log(factura.pagos.value[i].forma_pago.tag +'tag' +factura.secuencial.value);
+            factura.pagos.value[i].total.value=validation.fixedDecimal(factura.pagos.value[i].total.value);
             person.element('pago')
                 .ele(factura.pagos.value[i].forma_pago.tag, factura.pagos.value[i].forma_pago.value).up()
                 .ele(factura.pagos.value[i].total.tag, factura.pagos.value[i].total.value).up()
@@ -104,8 +114,9 @@ module.exports = {
         for (var i = 0; i < n; i++) {
             // Create an XML fragment
             // console.log(factura.total_con_impuestos.value[0]);
-
-            console.log(n);
+            factura.detalles.value[i].precio_unitario.value=validation.fixedDecimal(factura.detalles.value[i].precio_unitario.value);
+            factura.detalles.value[i].precio_total_sin_impuesto.value=validation.fixedDecimal(factura.detalles.value[i].precio_total_sin_impuesto.value);
+            //console.log(n);
             var item = person.ele('detalle')
                 .ele(factura.detalles.value[i].codigo_principal.tag, factura.detalles.value[i].codigo_principal.value).up()
                 .ele(factura.detalles.value[i].descripcion.tag, factura.detalles.value[i].descripcion.value).up()
@@ -126,7 +137,8 @@ module.exports = {
                 // console.log(factura.total_con_impuestos.value[0]);
 
                // console.log(person.children);
-
+                factura.detalles.value[i].impuestos.value[j].base_imponible.value=validation.fixedDecimal(factura.detalles.value[i].impuestos.value[j].base_imponible.value);
+                factura.detalles.value[i].impuestos.value[j].valor.value=validation.fixedDecimal(factura.detalles.value[i].impuestos.value[j].valor.value);
                 item2.ele('impuesto')
                     .ele(factura.detalles.value[i].impuestos.value[j].codigo.tag, factura.detalles.value[i].impuestos.value[j].codigo.value).up()
                     .ele(factura.detalles.value[i].impuestos.value[j].codigo_porcentaje.tag, factura.detalles.value[i].impuestos.value[j].codigo_porcentaje.value).up()
@@ -175,7 +187,7 @@ module.exports = {
             allowEmpty: false,
             spacebeforeslash: ''
         });
-
+        log.register('Creado XML'+ factura.secuencial.value);
         return (xml);
 
     }

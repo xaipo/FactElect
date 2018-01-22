@@ -31,10 +31,10 @@ module.exports = {
         var clientes= new HashMap();
         var client= new Clients();
         clientes.set('first', 'test');
-        console.log(clientes.get('first'));
+      //  console.log(clientes.get('first'));
         for(var i=0;i<n;i++){
             client= new Clients();
-            console.log(vec[i]);
+          //  console.log(vec[i]);
             if(vec[i].DIRECCION){
                 client.direccion=  JSON.stringify(vec[i].DIRECCION).replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
             }
@@ -50,7 +50,7 @@ module.exports = {
             }
             clientes.set(ruc, client);
         }
-        console.log(clientes);
+    //    console.log(clientes);
         return clientes;
     }
 

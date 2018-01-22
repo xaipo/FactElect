@@ -13,6 +13,7 @@ var identificaciones = require('../Models/IDProveedores');
 var Impuesto = require('../Models/ImpuestoXml');
 var codigosFormas= require('../Models/FormasPago');
 var porcentajeIva= require('../Models/ValoresIva');
+var porcentaje= require('../Models/PorcentajeIva');
 var Detalle= require('../Models/DetalleXml');
 var Adicionales= require('../Models/AdicionalXml');
 var Big = require('big-js');
@@ -52,6 +53,7 @@ module.exports = {
                     var numAux= vec[i].numfac.split('-');
 
                     factura.secuencial.value=numAux[1];
+                    log.register('Creacion Factura'+factura.secuencial.value);
                     var dateAux=vec[i].fecfac.split(' ');
                     factura.fecha_emision.value=dateAux[0];
 
@@ -85,6 +87,7 @@ module.exports = {
                     var impuestoTotal= new  Impuesto();
                     // console.log(impuestoTotal);
                     impuestoTotal.base_imponible.value=factura.total_sin_impuestos.value;
+                    impuestoTotal.tarifa.value=porcentaje.doce;
                     impuestoTotal.valor.value=vec[i].totiva;
                     factura.total_con_impuestos.value.push(impuestoTotal);
 
@@ -96,6 +99,7 @@ module.exports = {
                     }
 
                     pagoFac.unidad_tiempo.value='dias';
+                    pagoFac.total.value=vec[i].totfac;
                     factura.pagos.value.push(pagoFac);
                     var detalle = new Detalle();
 
@@ -111,6 +115,7 @@ module.exports = {
                     var ivaIndividual =  new Big(detalle.precio_total_sin_impuesto.value);
                     var impuestoIndividual= new Impuesto();
                     impuestoIndividual.base_imponible.value=vec[i].totren;
+                    impuestoIndividual.tarifa.value=porcentaje.doce;
                     // impuestoIndividual.valor.value=ivaIndividual.multiply(porcentajeIva.doce);
                     ivaIndividual= ivaIndividual.times(porcentajeIva.doce).toFixed(2).toString();
                     //console.log(ivaIndividual+'big');
@@ -149,6 +154,7 @@ module.exports = {
                     var numAux= vec[i].numfac.split('-');
 
                     factura.secuencial.value=numAux[1];
+                    log.register('Creacion Factura'+factura.secuencial.value);
                     var dateAux=vec[i].fecfac.split(' ');
                     factura.fecha_emision.value=dateAux[0];
 
@@ -181,6 +187,8 @@ module.exports = {
                     var impuestoTotal= new  Impuesto();
                     // console.log(impuestoTotal);
                     impuestoTotal.base_imponible.value=factura.total_sin_impuestos.value;
+                    impuestoTotal.tarifa.value=porcentaje.doce;
+                    impuestoIndividual.tarifa.value=porcentaje.doce;
                     impuestoTotal.valor.value=vec[i].totiva;
                     if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
                         factura.total_con_impuestos=facturas[cont_factura_actual].total_con_impuestos;
@@ -197,6 +205,7 @@ module.exports = {
                     }
 
                     pagoFac.unidad_tiempo.value='dias';
+                    pagoFac.total.value=vec[i].totfac;
                     if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
                         factura.pagos=facturas[cont_factura_actual].pagos;
                         factura.pagos.value[0]=(pagoFac);
@@ -254,7 +263,7 @@ module.exports = {
         var m=facturas.length;
        //console.log(facturas);
         for(var i=0; i<m;i++){
-            console.log(i);
+            //console.log(i);
            var xml= document.generateFactura(facturas[i]);
             wtiteXml.write(xml,facturas[i].secuencial.value);
         }
