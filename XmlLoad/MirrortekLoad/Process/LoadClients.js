@@ -42,11 +42,11 @@ module.exports = {
                 client.telefono=  vec[i].TELEFONOS.trim();
             }
             if(vec[i]['E MAIL']){
-                client.mail=  JSON.stringify(vec[i]['E MAIL']).replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+                client.mail= vec[i]['E MAIL'].trim();
             }
             var ruc;
             if(vec[i].RUC){
-                ruc=  JSON.stringify(vec[i].RUC).replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+                ruc=  vec[i].RUC.trim();
             }
             clientes.set(ruc, client);
         }

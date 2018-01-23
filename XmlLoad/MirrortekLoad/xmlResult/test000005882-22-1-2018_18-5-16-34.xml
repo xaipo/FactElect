@@ -12,13 +12,13 @@
     <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
   </informacionTributaria>
   <infoFactura>
-    <fechaEmision>01/11/18</fechaEmision>
+    <fechaEmision>01/11/2018</fechaEmision>
     <dirEstablecimiento>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirEstablecimiento>
     <obligadoContabilidad>SI</obligadoContabilidad>
     <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
     <razonSocialComprador>SOLORZANO ZAMBRANO GINA</razonSocialComprador>
     <identificacionComprador>1311850000001</identificacionComprador>
-    <direccionComprador/>
+    <direccionComprador>"CIUDAD DEL MAR"</direccionComprador>
     <totalSinImpuestos>151.19</totalSinImpuestos>
     <totalDescuento>0.00</totalDescuento>
     <totalConImpuesto>
@@ -129,5 +129,8 @@
       </impuestos>
     </detalle>
   </detalles>
-  <infoAdicional/>
+  <infoAdicional>
+    <campoAdicional nombre="email">gina.solorzano@outlook.com</campoAdicional>
+    <campoAdicional nombre="telefono">52310913</campoAdicional>
+  </infoAdicional>
 </factura>

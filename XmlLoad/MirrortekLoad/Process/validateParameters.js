@@ -26,6 +26,7 @@ module.exports = {
         var vec=num.split('/');
         var day =vec[0];
         var month =vec[1];
+        var year =vec[2];
 
         var cant = day.length;
         if(cant==1){
@@ -36,8 +37,14 @@ module.exports = {
         if(cant==1){
             day='0'+day;
         }
-        var result=day+'/'+month+'/'+vec[2];
+
+        cant=year.length;
+        if(cant==2){
+            year='20'+year;
+        }
+        var result=day+'/'+month+'/'+year;
         return result;
+
     },
     fixedDecimal : function (num){
 

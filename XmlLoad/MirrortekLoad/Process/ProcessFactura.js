@@ -41,7 +41,6 @@ module.exports = {
         var cont_factura_actual=0;
         for(var i=0;i<n;i++){
 
-
             aux=vec[i+1]
     /*        if(aux!== undefined) {*/
 
@@ -73,7 +72,7 @@ module.exports = {
                     var nombre =  vec[i].nomcli.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
                     factura.razon_social_comprador.value=nombre;
                     factura.identificacion_comprador.value=vec[i].codcli;
-                    var cli=clients.get(JSON.stringify(factura.identificacion_comprador.value));
+                    var cli=clients.get(factura.identificacion_comprador.value);
                     if(cli!=undefined){
                         factura.direccion_comprador.value=cli.direccion;
                     }
@@ -175,6 +174,8 @@ module.exports = {
                     factura.razon_social_comprador.value=nombre;
                     factura.identificacion_comprador.value=vec[i].codcli;
 
+                    //var ci = factura.identificacion_comprador.value;
+                    var ci = '1303963712 ';
                     var cli=clients.get(factura.identificacion_comprador.value);
                     if(cli!=undefined){
                         factura.direccion_comprador.value=cli.direccion;
@@ -240,9 +241,18 @@ module.exports = {
 
 
                     if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value){
+                        adicionales = new Adicionales();
+                        adicionales.adicional.nombre='email'
+                        adicionales.adicional.value=cli.mail;
+                        factura.info_adicional.value[0]=(adicionales);
+                        adicionales = new Adicionales();
+                        adicionales.adicional.nombre='telefono'
+                        adicionales.adicional.value=cli.telefono;
+                        factura.info_adicional.value[1]=(adicionales);
                         facturas[cont_factura_actual]=factura;
                     }else{
                         if(cli!=undefined){
+                            adicionales = new Adicionales();
                             adicionales.adicional.nombre='email'
                             adicionales.adicional.value=cli.mail;
                             factura.info_adicional.value.push(adicionales);

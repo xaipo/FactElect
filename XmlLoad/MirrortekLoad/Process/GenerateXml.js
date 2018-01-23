@@ -171,9 +171,12 @@ module.exports = {
             var nomb=factura.info_adicional.value[i].adicional.tag;
             var val=factura.info_adicional.value[i].adicional.nombre;
            // console.log(n);
-            person.element('campoAdicional',{nombre:val},factura.info_adicional.value[i].adicional.value)
+            if(factura.info_adicional.value[i].adicional.value!==''){
+                person.element('campoAdicional',{nombre:val},factura.info_adicional.value[i].adicional.value)    ;
+            }
 
-            ;
+
+
             // Import the root node of the fragment after
             // the people node of the main XML document
 

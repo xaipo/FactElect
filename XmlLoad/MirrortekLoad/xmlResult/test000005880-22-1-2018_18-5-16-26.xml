@@ -12,7 +12,7 @@
     <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
   </informacionTributaria>
   <infoFactura>
-    <fechaEmision>01/11/18</fechaEmision>
+    <fechaEmision>01/11/2018</fechaEmision>
     <dirEstablecimiento>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirEstablecimiento>
     <obligadoContabilidad>SI</obligadoContabilidad>
     <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
@@ -62,7 +62,7 @@
     </detalle>
   </detalles>
   <infoAdicional>
-    <campoAdicional nombre="email">"viviana.soledispa@indumaster.com.ec"</campoAdicional>
+    <campoAdicional nombre="email">viviana.soledispa@indumaster.com.ec</campoAdicional>
     <campoAdicional nombre="telefono">53700875</campoAdicional>
   </infoAdicional>
 </factura>
