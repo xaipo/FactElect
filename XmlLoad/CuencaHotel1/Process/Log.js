@@ -6,7 +6,7 @@ var now = require('./datesFormater');
 module.exports = {
 
     register : function (text){
-        fs.appendFile('systemLog', '\n'+text+'-'+ now.getNow(), function (err) {
+        fs.appendFile('systemLog', '\n'+text+'_'+ now.getNow()+'$', function (err) {
 
             if (err) return console.log(err);
             console.log('successfully appended "' + text + '"');

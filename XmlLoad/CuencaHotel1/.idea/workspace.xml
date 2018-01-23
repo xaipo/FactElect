@@ -18,8 +18,8 @@
       <file leaf-file-name="GenerateXml.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Process/GenerateXml.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            <state relative-caret-position="799">
+              <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -30,8 +30,8 @@
       <file leaf-file-name="AccessRead.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Process/AccessRead.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="80" />
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -40,8 +40,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="561">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,8 +75,12 @@
         <entry file="file://$PROJECT_DIR$/Process/ProcessFactura.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4471">
-              <caret line="263" column="5" lean-forward="false" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
-              <folding />
+              <caret line="283" column="5" lean-forward="false" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
+              <folding>
+                <marker date="1516661802511" expanded="true" signature="12847:12993" ph="{...}" />
+                <marker date="1516661802511" expanded="true" signature="12847:13087" ph="{...}" />
+                <marker date="1516661802511" expanded="true" signature="12847:13090" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -201,7 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,7 +234,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,11 +374,12 @@
       <workItem from="1516628645192" duration="5624000" />
       <workItem from="1516636020740" duration="428000" />
       <workItem from="1516638369186" duration="549000" />
+      <workItem from="1516666944588" duration="355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94474000" />
+    <option name="totallyTimeSpent" value="94829000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -436,17 +441,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Process/GenerateXml.js</url>
-          <line>153</line>
+          <line>165</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Process/ProcessFactura.js</url>
-          <line>252</line>
+          <line>272</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Process/ProcessFactura.js</url>
-          <line>122</line>
+          <line>126</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
@@ -565,8 +570,8 @@
     <entry file="file://$PROJECT_DIR$/xmlResult/test00005882-22-1-2018_8-50-57-955.xml" />
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="561">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -606,15 +611,19 @@
     <entry file="file://$PROJECT_DIR$/Process/ProcessFactura.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4471">
-          <caret line="263" column="5" lean-forward="false" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
-          <folding />
+          <caret line="283" column="5" lean-forward="false" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
+          <folding>
+            <marker date="1516661802511" expanded="true" signature="12847:12993" ph="{...}" />
+            <marker date="1516661802511" expanded="true" signature="12847:13087" ph="{...}" />
+            <marker date="1516661802511" expanded="true" signature="12847:13090" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Process/GenerateXml.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        <state relative-caret-position="799">
+          <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
@@ -624,8 +633,8 @@
     <entry file="file://$PROJECT_DIR$/xmlResult/test00005880-22-1-2018_9-54-54-455.xml" />
     <entry file="file://$PROJECT_DIR$/Process/AccessRead.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="80" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>

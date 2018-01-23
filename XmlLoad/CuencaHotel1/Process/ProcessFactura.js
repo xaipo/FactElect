@@ -13,6 +13,7 @@ var identificaciones = require('../Models/IDProveedores');
 var Impuesto = require('../Models/ImpuestoXml');
 var codigosFormas= require('../Models/FormasPago');
 var porcentajeIva= require('../Models/ValoresIva');
+var porcentaje= require('../Models/PorcentajeIva');
 var Detalle= require('../Models/DetalleXml');
 var Adicionales= require('../Models/AdicionalXml');
 var Big = require('big-js');
@@ -40,7 +41,6 @@ module.exports = {
         var cont_factura_actual=0;
         for(var i=0;i<n;i++){
 
-
             aux=vec[i+1]
     /*        if(aux!== undefined) {*/
 
@@ -52,6 +52,7 @@ module.exports = {
                     var numAux= vec[i].numfac.split('-');
 
                     factura.secuencial.value=numAux[1];
+                    log.register('Creacion Factura'+factura.secuencial.value);
                     var dateAux=vec[i].fecfac.split(' ');
                     factura.fecha_emision.value=dateAux[0];
 
@@ -85,6 +86,7 @@ module.exports = {
                     var impuestoTotal= new  Impuesto();
                     // console.log(impuestoTotal);
                     impuestoTotal.base_imponible.value=factura.total_sin_impuestos.value;
+                    impuestoTotal.tarifa.value=porcentaje.doce;
                     impuestoTotal.valor.value=vec[i].totiva;
                     factura.total_con_impuestos.value.push(impuestoTotal);
 
@@ -96,6 +98,7 @@ module.exports = {
                     }
 
                     pagoFac.unidad_tiempo.value='dias';
+                    pagoFac.total.value=vec[i].totfac;
                     factura.pagos.value.push(pagoFac);
                     var detalle = new Detalle();
 
@@ -111,6 +114,7 @@ module.exports = {
                     var ivaIndividual =  new Big(detalle.precio_total_sin_impuesto.value);
                     var impuestoIndividual= new Impuesto();
                     impuestoIndividual.base_imponible.value=vec[i].totren;
+                    impuestoIndividual.tarifa.value=porcentaje.doce;
                     // impuestoIndividual.valor.value=ivaIndividual.multiply(porcentajeIva.doce);
                     ivaIndividual= ivaIndividual.times(porcentajeIva.doce).toFixed(2).toString();
                     //console.log(ivaIndividual+'big');
@@ -121,13 +125,14 @@ module.exports = {
                     var adicionales = new Adicionales();
 
                     if(cli!=undefined){
-                        adicionales.nombre='email'
-                        adicionales.value=cli.mail;
-                        factura.info_adicional.push(adicionales);
                         adicionales = new Adicionales();
-                        adicionales.nombre='telefono'
-                        adicionales.value=cli.telefono;
-
+                        adicionales.adicional.nombre='email'
+                        adicionales.adicional.value=cli.mail;
+                        factura.info_adicional.value.push(adicionales);
+                        adicionales = new Adicionales();
+                        adicionales.adicional.nombre='telefono'
+                        adicionales.adicional.value=cli.telefono;
+                        factura.info_adicional.value.push(adicionales);
                     }
 
 
@@ -148,6 +153,7 @@ module.exports = {
                     var numAux= vec[i].numfac.split('-');
 
                     factura.secuencial.value=numAux[1];
+                    log.register('Creacion Factura'+factura.secuencial.value);
                     var dateAux=vec[i].fecfac.split(' ');
                     factura.fecha_emision.value=dateAux[0];
 
@@ -168,6 +174,8 @@ module.exports = {
                     factura.razon_social_comprador.value=nombre;
                     factura.identificacion_comprador.value=vec[i].codcli;
 
+                    //var ci = factura.identificacion_comprador.value;
+                    var ci = '1303963712 ';
                     var cli=clients.get(factura.identificacion_comprador.value);
                     if(cli!=undefined){
                         factura.direccion_comprador.value=cli.direccion;
@@ -180,6 +188,8 @@ module.exports = {
                     var impuestoTotal= new  Impuesto();
                     // console.log(impuestoTotal);
                     impuestoTotal.base_imponible.value=factura.total_sin_impuestos.value;
+                    impuestoTotal.tarifa.value=porcentaje.doce;
+                    impuestoIndividual.tarifa.value=porcentaje.doce;
                     impuestoTotal.valor.value=vec[i].totiva;
                     if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
                         factura.total_con_impuestos=facturas[cont_factura_actual].total_con_impuestos;
@@ -196,6 +206,7 @@ module.exports = {
                     }
 
                     pagoFac.unidad_tiempo.value='dias';
+                    pagoFac.total.value=vec[i].totfac;
                     if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
                         factura.pagos=facturas[cont_factura_actual].pagos;
                         factura.pagos.value[0]=(pagoFac);
@@ -230,16 +241,25 @@ module.exports = {
 
 
                     if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value){
+                        adicionales = new Adicionales();
+                        adicionales.adicional.nombre='email'
+                        adicionales.adicional.value=cli.mail;
+                        factura.info_adicional.value[0]=(adicionales);
+                        adicionales = new Adicionales();
+                        adicionales.adicional.nombre='telefono'
+                        adicionales.adicional.value=cli.telefono;
+                        factura.info_adicional.value[1]=(adicionales);
                         facturas[cont_factura_actual]=factura;
                     }else{
                         if(cli!=undefined){
-                            adicionales.nombre='email'
-                            adicionales.value=cli.mail;
-                            factura.info_adicional.push(adicionales);
                             adicionales = new Adicionales();
-                            adicionales.nombre='telefono'
-                            adicionales.value=cli.telefono;
-                            factura.info_adicional.push(adicionales);
+                            adicionales.adicional.nombre='email'
+                            adicionales.adicional.value=cli.mail;
+                            factura.info_adicional.value.push(adicionales);
+                            adicionales = new Adicionales();
+                            adicionales.adicional.nombre='telefono'
+                            adicionales.adicional.value=cli.telefono;
+                            factura.info_adicional.value.push(adicionales);
                         }
                         facturas.push(factura);
                         cont_factura_actual++;
@@ -253,7 +273,7 @@ module.exports = {
         var m=facturas.length;
        //console.log(facturas);
         for(var i=0; i<m;i++){
-            console.log(i);
+            //console.log(i);
            var xml= document.generateFactura(facturas[i]);
             wtiteXml.write(xml,facturas[i].secuencial.value);
         }

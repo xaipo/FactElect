@@ -7,6 +7,6 @@ module.exports = {
 
     runCommand: function (command){
 
-        nodeCmd.get(command, (err, data, stderr) => log.register(data));
+        nodeCmd.get(command, (err, data, stderr) => log.register('comando ejecutado '));
     }
 }
