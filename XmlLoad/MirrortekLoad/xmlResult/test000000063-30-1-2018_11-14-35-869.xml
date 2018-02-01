@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="2.1.0">
+  <infoTributaria>
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>MIRRORTECK INDUSTRIES S.A.</razonSocial>
+    <ruc>1791804287001</ruc>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>001</ptoEmi>
+    <secuencial>000000063</secuencial>
+    <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
+  </infoTributaria>
+  <infoFactura>
+    <fechaEmision>26/01/2018</fechaEmision>
+    <dirEstablecimiento>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirEstablecimiento>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+    <razonSocialComprador>SANTANDER GORDILLO JONAS ALFREDO</razonSocialComprador>
+    <identificacionComprador>1701846287001</identificacionComprador>
+    <direccionComprador>"CALLE PALMERAS SOLAR 13 Y CASUARINAS KM 9.5 VIA A DAULE"</direccionComprador>
+    <totalSinImpuestos>13903.96</totalSinImpuestos>
+    <totalDescuento>0.00</totalDescuento>
+    <totalConImpuestos>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible>13903.96</baseImponible>
+        <tarifa>12.00</tarifa>
+        <valor>1668.48</valor>
+      </totalImpuesto>
+    </totalConImpuestos>
+    <propina>0.00</propina>
+    <importeTotal>15572.44</importeTotal>
+    <moneda>Dolar</moneda>
+    <pagos>
+      <pago>
+        <formaPago>20</formaPago>
+        <total>15572.44</total>
+        <plazo>45</plazo>
+        <unidadTiempo>dias</unidadTiempo>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal>EPL-002</codigoPrincipal>
+      <descripcion>ESPEJO CLARO 3MM 183 X 244</descripcion>
+      <cantidad>320</cantidad>
+      <precioUnitario>30.77</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>9846.40</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>9846.40</baseImponible>
+          <valor>1181.57</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+    <detalle>
+      <codigoPrincipal>EPL-011</codigoPrincipal>
+      <descripcion>ESPEJO CLARO 4MM 214 X 330</descripcion>
+      <cantidad>68</cantidad>
+      <precioUnitario>59.67</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>4057.56</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>4057.56</baseImponible>
+          <valor>486.91</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+  <infoAdicional>
+    <campoAdicional nombre="email">impor01@importadoralolita.com</campoAdicional>
+    <campoAdicional nombre="telefono">042114110</campoAdicional>
+  </infoAdicional>
+</factura>

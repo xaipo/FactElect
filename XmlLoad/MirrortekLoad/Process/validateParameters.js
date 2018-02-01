@@ -24,8 +24,8 @@ module.exports = {
     dateCero : function (num){
 
         var vec=num.split('/');
-        var day =vec[0];
-        var month =vec[1];
+        var day =vec[1];
+        var month =vec[0];
         var year =vec[2];
 
         var cant = day.length;
@@ -35,7 +35,7 @@ module.exports = {
 
         cant=month.length;
         if(cant==1){
-            day='0'+day;
+            month='0'+month;
         }
 
         cant=year.length;

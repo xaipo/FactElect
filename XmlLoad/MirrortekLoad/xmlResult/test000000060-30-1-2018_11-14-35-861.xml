@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="2.1.0">
+  <infoTributaria>
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>MIRRORTECK INDUSTRIES S.A.</razonSocial>
+    <ruc>1791804287001</ruc>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>001</ptoEmi>
+    <secuencial>000000060</secuencial>
+    <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
+  </infoTributaria>
+  <infoFactura>
+    <fechaEmision>26/01/2018</fechaEmision>
+    <dirEstablecimiento>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirEstablecimiento>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <tipoIdentificacionComprador>06</tipoIdentificacionComprador>
+    <razonSocialComprador>GOMEZ MEDINA ENYERVEN JESUS</razonSocialComprador>
+    <identificacionComprador>095262475</identificacionComprador>
+    <direccionComprador>MONTECRISTI</direccionComprador>
+    <totalSinImpuestos>13.35</totalSinImpuestos>
+    <totalDescuento>0.00</totalDescuento>
+    <totalConImpuestos>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible>13.35</baseImponible>
+        <tarifa>12.00</tarifa>
+        <valor>1.60</valor>
+      </totalImpuesto>
+    </totalConImpuestos>
+    <propina>0.00</propina>
+    <importeTotal>14.95</importeTotal>
+    <moneda>Dolar</moneda>
+    <pagos>
+      <pago>
+        <formaPago>01</formaPago>
+        <total>14.95</total>
+        <plazo>30</plazo>
+        <unidadTiempo>dias</unidadTiempo>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal>OP-001</codigoPrincipal>
+      <descripcion>OTROS ESPEJOS DECORATIVOS</descripcion>
+      <cantidad>15</cantidad>
+      <precioUnitario>0.89</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>13.35</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>13.35</baseImponible>
+          <valor>1.60</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+  <infoAdicional>
+    <campoAdicional nombre="email">info@mirrorteck.com</campoAdicional>
+  </infoAdicional>
+</factura>

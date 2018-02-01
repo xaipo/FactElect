@@ -9,7 +9,7 @@ module.exports = {
 write: function (xml,sec){
     //console.log(xml);
     //console.log('guarda archivo');
-    path='./xmlResult/test'+sec+'-'+now.getNow()+'.xml';
+    path='C:\\Facuracion_Electronica\\Mirrortec\\NoProcesadas\\Facturas\\fac'+sec+'-'+now.getNow()+'.xml';
     fs.appendFile(path, xml, function (err) {
         if (err) throw err;
       //  console.log('Saved!');

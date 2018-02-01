@@ -23,7 +23,9 @@ var xls;
 var clientes;
 
 var job = new CronJob({
-    cronTime: '* * * * * *',
+   // cronTime: ' 00 00 15 * * 1-5',//deploy ejecuta cada dia 5am
+    //cronTime: ' 00 04 15 * * 1-5',//ejecuta cada dia 5am
+    cronTime: '* * * * * *',//ejecuta siempre
     onTick: function () {
         clientes=clients.loadClients();
    var facturaProcessed=factura.processFactura(clientes);
@@ -36,7 +38,7 @@ var job = new CronJob({
 
 
 
-        var commnad='move ExcelFiles\\test.txt ProcessedFiles\\destino'+date.getNow()+'.txt'
+        var commnad='move ExcelFiles\\facturas.xls ProcessedFiles\\destino'+date.getNow()+'.xls'
         //console.log(commnad);
         moveFile.runCommand(commnad);
     },
@@ -95,7 +97,7 @@ app.get('/log', function (req, res) {
 app.post('/runManual', function (req, res) {
     clientes=clients.loadClients();
     var facturaProcessed=factura.processFactura(clientes);
-    var commnad='move ExcelFiles\\test.txt ProcessedFiles\\destino'+date.getNow()+'.txt'
+    var commnad='move ExcelFiles\\facturas.xls ProcessedFiles\\destino'+date.getNow()+'.xls'
     //console.log(commnad);
     moveFile.runCommand(commnad);
     res.send('ejecutado');

@@ -22,265 +22,306 @@ var HashMap = require('hashmap');
 module.exports = {
 
     //llena la factura segun el formato para genera el xlm
-    processFactura: function (clients){
-        log.register('Lectura de Excel');
-        var workbook = XLSX.readFile('ExcelFiles\\facturas.xls');
-        var name_sheet = workbook.SheetNames[0];
-        var sheet = workbook.Sheets[name_sheet];
-     ;
-        var vec=  XLSX.utils.sheet_to_json(sheet);
-        var controlRepet=0;
+    processFactura: function (clients) {
+        try {
+            log.register('Lectura de Excel');
 
-        var factura= new Factura();
 
-        var n=vec.length;
-        var count=0;
-        var repetido=0;
-        var lastNumber=0;
-        var facturas=[];
-        var cont_factura_actual=0;
-        for(var i=0;i<n;i++){
+            var workbook = XLSX.readFile('ExcelFiles\\facturas.xls');
+            var name_sheet = workbook.SheetNames[0];
+            var sheet = workbook.Sheets[name_sheet];
+            ;
+            var vec=  XLSX.utils.sheet_to_json(sheet);
+            var controlRepet=0;
 
-            aux=vec[i+1]
-    /*        if(aux!== undefined) {*/
 
-                if(i===0){
-                    controlRepet=0;
+
+
+
+
+            var factura = new Factura();
+
+            var n = vec.length;
+            var count = 0;
+            var repetido = 0;
+            var lastNumber = 0;
+            var facturas = [];
+            var cont_factura_actual = 0;
+            for (var i = 0; i < n; i++) {
+
+                aux = vec[i + 1]
+                /*        if(aux!== undefined) {*/
+
+                if (i === 0) {
+                    controlRepet = 0;
                     controlRepet++;
                     count++;
-                    factura= new Factura();
-                    var numAux= vec[i].numfac.split('-');
+                    factura = new Factura();
+                    var numAux = vec[i].numfac.split('-');
 
-                    factura.secuencial.value=numAux[1];
-                    log.register('Creacion Factura'+factura.secuencial.value);
-                    var dateAux=vec[i].fecfac.split(' ');
-                    factura.fecha_emision.value=dateAux[0];
-
-                    lastNumber=vec[1].numfac;
+                    factura.secuencial.value = numAux[1];
+                    log.register('Creacion Factura' + factura.secuencial.value);
+                    var dateAux = vec[i].fecfac.split(' ');
+                    factura.fecha_emision.value = dateAux[0];
+                    console.log(vec[1]);
+                    lastNumber = vec[i].numfac;
                     //verificacion si es cedula o ruc para asignar el codigo
-                    if(vec[i].codcli!=='9999999999999'){
-                        vec[i].codcli=vec[i].codcli.trim();
-                        var cantidad= vec[i].codcli.length;
+                    if (vec[i].codcli !== '9999999999999') {
+                        vec[i].codcli = vec[i].codcli.trim();
+                        var cantidad = vec[i].codcli.length;
 
-                        switch (cantidad){
+                        switch (cantidad) {
 
-                            case 10: factura.tipo_identifiacion_comprador.value=identificaciones.cedula; break;
-                            case 13: factura.tipo_identifiacion_comprador.value=identificaciones.ruc; break;
-                            default: factura.tipo_identifiacion_comprador.value=identificaciones.pasaporte; break;
+                            case 10:
+                                factura.tipo_identifiacion_comprador.value = identificaciones.cedula;
+                                break;
+                            case 13:
+                                factura.tipo_identifiacion_comprador.value = identificaciones.ruc;
+                                break;
+                            default:
+                                factura.tipo_identifiacion_comprador.value = identificaciones.pasaporte;
+                                break;
                         }
                     }
-                    var nombre =  vec[i].nomcli.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
-                    factura.razon_social_comprador.value=nombre;
-                    factura.identificacion_comprador.value=vec[i].codcli;
-                    var cli=clients.get(factura.identificacion_comprador.value);
-                    if(cli!=undefined){
-                        factura.direccion_comprador.value=cli.direccion;
+                    var nombre = vec[i].nomcli.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+                    factura.razon_social_comprador.value = nombre;
+                    factura.identificacion_comprador.value = vec[i].codcli;
+                    var cli = clients.get(factura.identificacion_comprador.value);
+                    if (cli != undefined) {
+                        factura.direccion_comprador.value = cli.direccion;
                     }
 
                     //pendiente la direccion del cliente
-                    factura.total_sin_impuestos.value=vec[i].totnet;
-                    factura.total_descuento.value=vec[i].totdes;
-
+                    factura.total_sin_impuestos.value = vec[i].totnet;
+                    factura.total_descuento.value = vec[i].totdes;
+                    factura.importe_total.value = vec[i].totfac;
 
                     /*agregar la parte de impuestos totales*/
-                    var impuestoTotal= new  Impuesto();
+                    var impuestoTotal = new Impuesto();
                     // console.log(impuestoTotal);
-                    impuestoTotal.base_imponible.value=factura.total_sin_impuestos.value;
-                    impuestoTotal.tarifa.value=porcentaje.doce;
-                    impuestoTotal.valor.value=vec[i].totiva;
+                    impuestoTotal.base_imponible.value = factura.total_sin_impuestos.value;
+                    impuestoTotal.tarifa.value = porcentaje.doce;
+                    impuestoTotal.valor.value = vec[i].totiva;
                     factura.total_con_impuestos.value.push(impuestoTotal);
 
-                    var pagoFac= new Pago();
+                    var pagoFac = new Pago();
                     /*parte de pagos*/
-                    if(vec[i].totfac>1000){
-                        pagoFac.forma_pago.value=codigosFormas.otros_con_financiero;
-                        pagoFac.plazo.value='45';
+                    if (vec[i].totfac > 1000) {
+                        pagoFac.forma_pago.value = codigosFormas.otros_con_financiero;
+                        pagoFac.plazo.value = '45';
                     }
 
-                    pagoFac.unidad_tiempo.value='dias';
-                    pagoFac.total.value=vec[i].totfac;
+                    pagoFac.unidad_tiempo.value = 'dias';
+                    pagoFac.total.value = vec[i].totfac;
                     factura.pagos.value.push(pagoFac);
                     var detalle = new Detalle();
 
-                    detalle.codigo_principal.value=vec[i].codart.trim();
-                    var desc= vec[i].nomart.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
-                    detalle.descripcion.value=desc;
-                    detalle.cantidad.value=vec[i].cantid;
-                    detalle.precio_unitario.value=vec[i].preuni;
-                    detalle.precio_total_sin_impuesto.value=vec[i].totren;
+                    detalle.codigo_principal.value = vec[i].codart.trim();
+                    var desc = vec[i].nomart.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+                    detalle.descripcion.value = desc;
+                    detalle.cantidad.value = vec[i].cantid;
+                    detalle.precio_unitario.value = vec[i].preuni;
+                    detalle.precio_total_sin_impuesto.value = vec[i].totren;
 
                     /*calculo impuesto del detalle*/
 
-                    var ivaIndividual =  new Big(detalle.precio_total_sin_impuesto.value);
-                    var impuestoIndividual= new Impuesto();
-                    impuestoIndividual.base_imponible.value=vec[i].totren;
-                    impuestoIndividual.tarifa.value=porcentaje.doce;
+                    var ivaIndividual = new Big(detalle.precio_total_sin_impuesto.value);
+                    var impuestoIndividual = new Impuesto();
+                    impuestoIndividual.base_imponible.value = vec[i].totren;
+                    impuestoIndividual.tarifa.value = porcentaje.doce;
                     // impuestoIndividual.valor.value=ivaIndividual.multiply(porcentajeIva.doce);
-                    ivaIndividual= ivaIndividual.times(porcentajeIva.doce).toFixed(2).toString();
+                    ivaIndividual = ivaIndividual.times(porcentajeIva.doce).toFixed(2).toString();
                     //console.log(ivaIndividual+'big');
-                    impuestoIndividual.valor.value=ivaIndividual;
-                    detalle.impuestos.value[0]=impuestoIndividual;
+                    impuestoIndividual.valor.value = ivaIndividual;
+                    detalle.impuestos.value[0] = impuestoIndividual;
                     factura.detalles.value.push(detalle);
 
                     var adicionales = new Adicionales();
 
-                    if(cli!=undefined){
+                    if (cli != undefined) {
                         adicionales = new Adicionales();
-                        adicionales.adicional.nombre='email'
-                        adicionales.adicional.value=cli.mail;
+                        adicionales.adicional.nombre = 'emailCliente'
+                        adicionales.adicional.value = cli.mail;
                         factura.info_adicional.value.push(adicionales);
                         adicionales = new Adicionales();
-                        adicionales.adicional.nombre='telefono'
-                        adicionales.adicional.value=cli.telefono;
+                        adicionales.adicional.nombre = 'telefono'
+                        adicionales.adicional.value = cli.telefono;
                         factura.info_adicional.value.push(adicionales);
+                    } else {
+                        adicionales = new Adicionales();
+                        adicionales.adicional.nombre = 'info@mirrorteck.com'
+                        adicionales.adicional.value = cli.mail;
+
                     }
 
 
+                    facturas.push(factura);
 
-                        facturas.push(factura);
-
-                    cont_factura_actual=i;
-
-
-
+                    cont_factura_actual = i;
 
 
                     //detalle
                     //adicionales
                     //     console.log(factura);
-                }else{
-                    factura= new Factura();
-                    var numAux= vec[i].numfac.split('-');
+                } else {
+                    factura = new Factura();
+                    var numAux = vec[i].numfac.split('-');
 
-                    factura.secuencial.value=numAux[1];
-                    log.register('Creacion Factura'+factura.secuencial.value);
-                    var dateAux=vec[i].fecfac.split(' ');
-                    factura.fecha_emision.value=dateAux[0];
+                    factura.secuencial.value = numAux[1];
+                    log.register('Creacion Factura' + factura.secuencial.value);
+                    var dateAux = vec[i].fecfac.split(' ');
+                    factura.fecha_emision.value = dateAux[0];
 
-                    lastNumber=vec[1].numfac;
+                    lastNumber = vec[i].numfac;
                     //verificacion si es cedula o ruc para asignar el codigo
-                    if(vec[i].codcli!=='9999999999999'){
-                        vec[i].codcli=vec[i].codcli.trim();
-                        var cantidad= vec[i].codcli.length;
+                    if (vec[i].codcli !== '9999999999999') {
+                        vec[i].codcli = vec[i].codcli.trim();
+                        var cantidad = vec[i].codcli.length;
 
-                        switch (cantidad){
+                        switch (cantidad) {
 
-                            case 10: factura.tipo_identifiacion_comprador.value=identificaciones.cedula; break;
-                            case 13: factura.tipo_identifiacion_comprador.value=identificaciones.ruc; break;
-                            default: factura.tipo_identifiacion_comprador.value=identificaciones.pasaporte; break;
+                            case 10:
+                                factura.tipo_identifiacion_comprador.value = identificaciones.cedula;
+                                break;
+                            case 13:
+                                factura.tipo_identifiacion_comprador.value = identificaciones.ruc;
+                                break;
+                            default:
+                                factura.tipo_identifiacion_comprador.value = identificaciones.pasaporte;
+                                break;
                         }
                     }
-                    var nombre =  vec[i].nomcli.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
-                    factura.razon_social_comprador.value=nombre;
-                    factura.identificacion_comprador.value=vec[i].codcli;
+                    var nombre = vec[i].nomcli.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+                    factura.razon_social_comprador.value = nombre;
+                    factura.identificacion_comprador.value = vec[i].codcli;
 
-                    //var ci = factura.identificacion_comprador.value;
-                    var ci = '1303963712 ';
-                    var cli=clients.get(factura.identificacion_comprador.value);
-                    if(cli!=undefined){
-                        factura.direccion_comprador.value=cli.direccion;
+                    var ci = factura.identificacion_comprador.value;
+                    //var ci = '1303963712 ';
+                    var cli = clients.get(factura.identificacion_comprador.value);
+                    if (cli != undefined) {
+                        factura.direccion_comprador.value = cli.direccion;
                     }
-                    factura.total_sin_impuestos.value=vec[i].totnet;
-                    factura.total_descuento.value=vec[i].totdes;
-
+                    factura.total_sin_impuestos.value = vec[i].totnet;
+                    factura.total_descuento.value = vec[i].totdes;
+                    factura.importe_total.value = vec[i].totfac;
 
                     /*agregar la parte de impuestos totales*/
-                    var impuestoTotal= new  Impuesto();
+                    var impuestoTotal = new Impuesto();
                     // console.log(impuestoTotal);
-                    impuestoTotal.base_imponible.value=factura.total_sin_impuestos.value;
-                    impuestoTotal.tarifa.value=porcentaje.doce;
-                    impuestoIndividual.tarifa.value=porcentaje.doce;
-                    impuestoTotal.valor.value=vec[i].totiva;
-                    if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
-                        factura.total_con_impuestos=facturas[cont_factura_actual].total_con_impuestos;
-                        factura.total_con_impuestos.value[0]=(impuestoTotal);
-                    }else{
+                    impuestoTotal.base_imponible.value = factura.total_sin_impuestos.value;
+                    impuestoTotal.tarifa.value = porcentaje.doce;
+                    impuestoIndividual.tarifa.value = porcentaje.doce;
+                    impuestoTotal.valor.value = vec[i].totiva;
+                    if (factura.secuencial.value === facturas[cont_factura_actual].secuencial.value) {
+                        factura.total_con_impuestos = facturas[cont_factura_actual].total_con_impuestos;
+                        factura.total_con_impuestos.value[0] = (impuestoTotal);
+                    } else {
                         factura.total_con_impuestos.value.push(impuestoTotal);
                     }
 
-                    var pagoFac= new Pago();
+                    var pagoFac = new Pago();
                     /*parte de pagos*/
-                    if(vec[i].totfac>1000){
-                        pagoFac.forma_pago.value=codigosFormas.otros_con_financiero;
-                        pagoFac.plazo.value='45';
+                    if (vec[i].totfac > 1000) {
+                        pagoFac.forma_pago.value = codigosFormas.otros_con_financiero;
+                        pagoFac.plazo.value = '45';
                     }
 
-                    pagoFac.unidad_tiempo.value='dias';
-                    pagoFac.total.value=vec[i].totfac;
-                    if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
-                        factura.pagos=facturas[cont_factura_actual].pagos;
-                        factura.pagos.value[0]=(pagoFac);
-                    }else{
+                    pagoFac.unidad_tiempo.value = 'dias';
+                    pagoFac.total.value = vec[i].totfac;
+                    if (factura.secuencial.value === facturas[cont_factura_actual].secuencial.value) {
+                        factura.pagos = facturas[cont_factura_actual].pagos;
+                        factura.pagos.value[0] = (pagoFac);
+                    } else {
                         factura.pagos.value.push(pagoFac);
                     }
                     var newDetalle = new Detalle();
-                    newDetalle.codigo_principal.value=vec[i].codart.trim();
-                    var desc= vec[i].nomart.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
-                    newDetalle.descripcion.value=desc;
-                    newDetalle.cantidad.value=vec[i].cantid;
-                    newDetalle.precio_unitario.value=vec[i].preuni;
-                    newDetalle.precio_total_sin_impuesto.value=vec[i].totren;
+                    newDetalle.codigo_principal.value = vec[i].codart.trim();
+                    var desc = vec[i].nomart.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+                    newDetalle.descripcion.value = desc;
+                    newDetalle.cantidad.value = vec[i].cantid;
+                    newDetalle.precio_unitario.value = vec[i].preuni;
+                    newDetalle.precio_total_sin_impuesto.value = vec[i].totren;
 
-                    var ivaIndividual =  new Big(vec[i].totren);
-                    var impuestoIndividual= new Impuesto();
-                    impuestoIndividual.base_imponible.value=vec[i].totren;
+                    var ivaIndividual = new Big(vec[i].totren);
+                    var impuestoIndividual = new Impuesto();
+                    impuestoIndividual.base_imponible.value = vec[i].totren;
+                    impuestoIndividual.tarifa.value = porcentaje.doce;
                     // impuestoIndividual.valor.value=ivaIndividual.multiply(porcentajeIva.doce);
-                    ivaIndividual= ivaIndividual.times(porcentajeIva.doce).toFixed(2).toString();
+                    ivaIndividual = ivaIndividual.times(porcentajeIva.doce).toFixed(2).toString();
                     //console.log(ivaIndividual+'big');
-                    impuestoIndividual.valor.value=ivaIndividual;
-                    newDetalle.impuestos.value[0]=impuestoIndividual;
-                    if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value) {
-                        factura.detalles=facturas[cont_factura_actual].detalles;
+                    impuestoIndividual.valor.value = ivaIndividual;
+                    newDetalle.impuestos.value[0] = impuestoIndividual;
+                    if (factura.secuencial.value === facturas[cont_factura_actual].secuencial.value) {
+                        factura.detalles = facturas[cont_factura_actual].detalles;
                         factura.detalles.value.push(newDetalle);
-                    }else{
+                    } else {
                         factura.detalles.value.push(newDetalle);
                     }
 
                     var adicionales = new Adicionales();
 
 
+                    if (cli != undefined) {
+                        if (factura.secuencial.value === facturas[cont_factura_actual].secuencial.value) {
+                            adicionales = new Adicionales();
+                            adicionales.adicional.nombre = 'email'
+                            adicionales.adicional.value = cli.mail;
+                            factura.info_adicional.value[0] = (adicionales);
+                            adicionales = new Adicionales();
+                            adicionales.adicional.nombre = 'telefono'
+                            adicionales.adicional.value = cli.telefono;
+                            factura.info_adicional.value[1] = (adicionales);
+                            facturas[cont_factura_actual] = factura;
+                        } else {
 
-                    if(factura.secuencial.value===facturas[cont_factura_actual].secuencial.value){
-                        adicionales = new Adicionales();
-                        adicionales.adicional.nombre='email'
-                        adicionales.adicional.value=cli.mail;
-                        factura.info_adicional.value[0]=(adicionales);
-                        adicionales = new Adicionales();
-                        adicionales.adicional.nombre='telefono'
-                        adicionales.adicional.value=cli.telefono;
-                        factura.info_adicional.value[1]=(adicionales);
-                        facturas[cont_factura_actual]=factura;
-                    }else{
-                        if(cli!=undefined){
                             adicionales = new Adicionales();
-                            adicionales.adicional.nombre='email'
-                            adicionales.adicional.value=cli.mail;
+                            adicionales.adicional.nombre = 'email'
+                            adicionales.adicional.value = cli.mail;
                             factura.info_adicional.value.push(adicionales);
-                            adicionales = new Adicionales();
-                            adicionales.adicional.nombre='telefono'
-                            adicionales.adicional.value=cli.telefono;
-                            factura.info_adicional.value.push(adicionales);
+                            facturas.push(factura);
+                            cont_factura_actual++;
                         }
-                        facturas.push(factura);
-                        cont_factura_actual++;
+                    } else {
+                        if (factura.secuencial.value === facturas[cont_factura_actual].secuencial.value) {
+                            adicionales = new Adicionales();
+                            adicionales.adicional.nombre = 'email'
+                            adicionales.adicional.value = 'info@mirrorteck.com';
+                            factura.info_adicional.value[0] = (adicionales);
+
+                        } else {
+
+                            adicionales = new Adicionales();
+                            adicionales.adicional.nombre = 'email'
+                            adicionales.adicional.value = 'info@mirrorteck.com';
+                            factura.info_adicional.value.push(adicionales);
+                            facturas.push(factura);
+                            cont_factura_actual++;
+                        }
                     }
+                    //  facturas.push(factura);
+
 
                 }
 
             }
 
 
-        var m=facturas.length;
-       //console.log(facturas);
-        for(var i=0; i<m;i++){
-            //console.log(i);
-           var xml= document.generateFactura(facturas[i]);
-            wtiteXml.write(xml,facturas[i].secuencial.value);
+            var m = facturas.length;
+            //console.log(facturas);
+            for (var i = 0; i < m; i++) {
+                //console.log(i);
+                var xml = document.generateFactura(facturas[i]);
+                wtiteXml.write(xml, facturas[i].secuencial.value);
+            }
+
+            // console.log(count);
+            // console.log(repetido);
+            return (vec[0]);
+        }
+        catch (error) {
+            console.log(error);
+            log.register('no se cargo archivo facturas.xls')
         }
 
-       // console.log(count);
-       // console.log(repetido);
-        return(vec[0]);
     }
-
 }

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="2.1.0">
+  <infoTributaria>
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>MIRRORTECK INDUSTRIES S.A.</razonSocial>
+    <ruc>1791804287001</ruc>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>001</ptoEmi>
+    <secuencial>000000064</secuencial>
+    <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
+  </infoTributaria>
+  <infoFactura>
+    <fechaEmision>26/01/2018</fechaEmision>
+    <dirEstablecimiento>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirEstablecimiento>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+    <razonSocialComprador>VILLACRESES JHON</razonSocialComprador>
+    <identificacionComprador>1306911916</identificacionComprador>
+    <direccionComprador>MONTECRISTI</direccionComprador>
+    <totalSinImpuestos>88.37</totalSinImpuestos>
+    <totalDescuento>0.00</totalDescuento>
+    <totalConImpuestos>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible>88.37</baseImponible>
+        <tarifa>12.00</tarifa>
+        <valor>10.60</valor>
+      </totalImpuesto>
+    </totalConImpuestos>
+    <propina>0.00</propina>
+    <importeTotal>98.97</importeTotal>
+    <moneda>Dolar</moneda>
+    <pagos>
+      <pago>
+        <formaPago>01</formaPago>
+        <total>98.97</total>
+        <plazo>30</plazo>
+        <unidadTiempo>dias</unidadTiempo>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal>ENM-P04</codigoPrincipal>
+      <descripcion>ESPEJO ENMARCADO PLATA/RAYAS 105X30 CM</descripcion>
+      <cantidad>4</cantidad>
+      <precioUnitario>10.71</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>42.84</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>42.84</baseImponible>
+          <valor>5.14</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+    <detalle>
+      <codigoPrincipal>OP-001</codigoPrincipal>
+      <descripcion>OTROS ESPEJOS DECORATIVOS</descripcion>
+      <cantidad>6</cantidad>
+      <precioUnitario>5.80</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>34.82</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>34.82</baseImponible>
+          <valor>4.18</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+    <detalle>
+      <codigoPrincipal>OP-001</codigoPrincipal>
+      <descripcion>OTROS ESPEJOS DECORATIVOS</descripcion>
+      <cantidad>1</cantidad>
+      <precioUnitario>10.71</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>10.71</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>10.71</baseImponible>
+          <valor>1.29</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+  <infoAdicional>
+    <campoAdicional nombre="email">info@mirrorteck.com</campoAdicional>
+  </infoAdicional>
+</factura>
