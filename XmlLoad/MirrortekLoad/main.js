@@ -24,23 +24,10 @@ var clientes;
 
 var job = new CronJob({
    // cronTime: ' 00 00 15 * * 1-5',//deploy ejecuta cada dia 5am
-    //cronTime: ' 00 04 15 * * 1-5',//ejecuta cada dia 5am
-    cronTime: '* * * * * *',//ejecuta siempre
+    cronTime: ' 00 04 15 * * 1-5',//ejecuta cada dia 5am
+   // cronTime: '* * * * * *',//ejecuta siempre
     onTick: function () {
-        clientes=clients.loadClients();
-   var facturaProcessed=factura.processFactura(clientes);
-
-   //console.log(clientes.get())
-      //  console.log(facturaProcessed);
-// pipe from stream
-
-        //genera xml
-
-
-
-        var commnad='move ExcelFiles\\facturas.xls ProcessedFiles\\destino'+date.getNow()+'.xls'
-        //console.log(commnad);
-        moveFile.runCommand(commnad);
+        porceso();
     },
     start: false,
 
@@ -49,7 +36,21 @@ process.startFunction (job);
 console.log(job.running);
 
 
+var proceso = function (){
+    clientes=clients.loadClients();
+    var facturaProcessed=factura.processFactura(clientes);
+    console.log('entra primera vez');
+    //console.log(clientes.get())
+    //  console.log(facturaProcessed);
+// pipe from stream
 
+    //genera xml
+
+
+    var commnad='move ExcelFiles\\facturas.xls ProcessedFiles\\destino'+date.getNow()+'.xls'
+    //console.log(commnad);
+    moveFile.runCommand(commnad);
+}
 
 var path= require("path");
 var app= express();
@@ -111,7 +112,7 @@ app.post('/clear', function (req, res) {
     });
     res.send('ejecutado');
 });
-
+proceso();
 app.listen(3000);
 log.register("servidor ejecutando en el puerto 3000");
 console.log("servidor ejecutando en el puerto 3000");

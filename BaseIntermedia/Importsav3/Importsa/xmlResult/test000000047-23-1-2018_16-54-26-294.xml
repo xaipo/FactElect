@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="2.1.0">
+  <infoTributaria>
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>MIRRORTECK INDUSTRIES S.A.</razonSocial>
+    <ruc>1791804287001</ruc>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>001</ptoEmi>
+    <secuencial>000000047</secuencial>
+    <dirMatriz>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirMatriz>
+  </infoTributaria>
+  <infoFactura>
+    <fechaEmision>01/23/2018</fechaEmision>
+    <dirEstablecimiento>VIA MANTA - MONTECRISTI Km: 10  FRENTE ALA FAÍIBRICA COENANSA</dirEstablecimiento>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <tipoIdentificacionComprador>05</tipoIdentificacionComprador>
+    <razonSocialComprador>REYES BAILON REINALDO</razonSocialComprador>
+    <identificacionComprador>1310659121</identificacionComprador>
+    <direccionComprador>MONTECRISTI</direccionComprador>
+    <totalSinImpuestos>41.79</totalSinImpuestos>
+    <totalDescuento>0.00</totalDescuento>
+    <totalConImpuestos>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible>41.79</baseImponible>
+        <tarifa>12.00</tarifa>
+        <valor>5.01</valor>
+      </totalImpuesto>
+    </totalConImpuestos>
+    <propina>0.00</propina>
+    <importeTotal>46.8</importeTotal>
+    <moneda>Dolar</moneda>
+    <pagos>
+      <pago>
+        <formaPago>01</formaPago>
+        <total>46.80</total>
+        <plazo>30</plazo>
+        <unidadTiempo>dias</unidadTiempo>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal>EPL-002</codigoPrincipal>
+      <descripcion>ESPEJO CLARO 3MM 183 X 244</descripcion>
+      <cantidad>1</cantidad>
+      <precioUnitario>41.79</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>41.79</precioTotalSinImpuesto>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12.00</tarifa>
+          <baseImponible>41.79</baseImponible>
+          <valor>5.01</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+  <infoAdicional/>
+</factura>

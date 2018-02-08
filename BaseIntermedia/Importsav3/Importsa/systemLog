@@ -1,0 +1,191 @@
+
+servidor ejecutando en el puerto 3000_29-1-2018_16-9-13-481$
+RequestError: Requests can only be made in the LoggedIn state, not the SentPrelogin state_29-1-2018_16-9-57-958$
+servidor ejecutando en el puerto 3000_29-1-2018_16-10-36-496$
+servidor ejecutando en el puerto 3000_29-1-2018_16-12-59-142$
+servidor ejecutando en el puerto 3000_29-1-2018_16-19-47-689$
+RequestError: Incorrect syntax near 'id_documento '._29-1-2018_16-19-58-629$
+servidor ejecutando en el puerto 3000_29-1-2018_16-20-51-880$
+RequestError: Incorrect syntax near 'id_documento '._29-1-2018_16-20-59-846$
+servidor ejecutando en el puerto 3000_29-1-2018_16-21-15-439$
+servidor ejecutando en el puerto 3000_29-1-2018_16-23-22-362$
+RequestError: Requests can only be made in the LoggedIn state, not the SentPrelogin state_29-1-2018_16-23-24-416$
+servidor ejecutando en el puerto 3000_29-1-2018_17-24-38-781$
+servidor ejecutando en el puerto 3000_29-1-2018_17-30-46-688$
+servidor ejecutando en el puerto 3000_29-1-2018_18-1-59-985$
+servidor ejecutando en el puerto 3000_29-1-2018_18-2-46-964$
+servidor ejecutando en el puerto 3000_29-1-2018_18-3-31-611$
+servidor ejecutando en el puerto 3000_29-1-2018_18-4-33-936$
+servidor ejecutando en el puerto 3000_29-1-2018_18-5-51-106$
+servidor ejecutando en el puerto 3000_29-1-2018_18-9-45-337$
+servidor ejecutando en el puerto 3000_29-1-2018_18-10-54-824$
+servidor ejecutando en el puerto 3000_29-1-2018_18-11-40-249$
+servidor ejecutando en el puerto 3000_29-1-2018_18-12-54-853$
+servidor ejecutando en el puerto 3000_29-1-2018_18-14-4-676$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_18-14-5-910$
+servidor ejecutando en el puerto 3000_29-1-2018_18-14-35-471$
+RequestError: Requests can only be made in the LoggedIn state, not the Connecting state_29-1-2018_18-15-12-906$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_18-15-13-41$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_18-15-14-36$
+servidor ejecutando en el puerto 3000_29-1-2018_18-16-15-350$
+RequestError: Requests can only be made in the LoggedIn state, not the Connecting state_29-1-2018_18-16-24-272$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_18-16-24-395$
+servidor ejecutando en el puerto 3000_29-1-2018_18-17-47-128$
+servidor ejecutando en el puerto 3000_29-1-2018_18-19-31-123$
+servidor ejecutando en el puerto 3000_29-1-2018_18-21-21-37$
+RequestError: Requests can only be made in the LoggedIn state, not the SentPrelogin state_29-1-2018_18-21-23-204$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_18-21-35-221$
+servidor ejecutando en el puerto 3000_29-1-2018_20-24-21-342$
+servidor ejecutando en el puerto 3000_29-1-2018_20-25-48-894$
+RequestError: Incorrect syntax near ')'._29-1-2018_20-26-11-324$
+servidor ejecutando en el puerto 3000_29-1-2018_20-27-46-749$
+servidor ejecutando en el puerto 3000_29-1-2018_20-29-0-452$
+servidor ejecutando en el puerto 3000_29-1-2018_20-31-12-865$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_20-31-26-344$
+servidor ejecutando en el puerto 3000_29-1-2018_20-33-1-131$
+servidor ejecutando en el puerto 3000_29-1-2018_20-54-1-697$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_20-54-15-462$
+servidor ejecutando en el puerto 3000_29-1-2018_20-55-3-241$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_20-55-4-674$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_20-55-5-432$
+servidor ejecutando en el puerto 3000_29-1-2018_20-57-12-870$
+servidor ejecutando en el puerto 3000_29-1-2018_20-59-8-470$
+servidor ejecutando en el puerto 3000_29-1-2018_21-0-58-72$
+servidor ejecutando en el puerto 3000_29-1-2018_21-1-59-96$
+servidor ejecutando en el puerto 3000_29-1-2018_21-2-51-617$
+RequestError: Requests can only be made in the LoggedIn state, not the Connecting state_29-1-2018_21-3-5-856$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_21-3-5-995$
+servidor ejecutando en el puerto 3000_29-1-2018_21-3-52-756$
+RequestError: Requests can only be made in the LoggedIn state, not the Connecting state_29-1-2018_21-3-55-139$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_21-3-55-283$
+servidor ejecutando en el puerto 3000_29-1-2018_21-5-8-440$
+RequestError: Invalid column name 'email'._29-1-2018_21-5-9-801$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_21-5-10-566$
+servidor ejecutando en el puerto 3000_29-1-2018_21-6-20-687$
+servidor ejecutando en el puerto 3000_29-1-2018_21-7-56-357$
+RequestError: Requests can only be made in the LoggedIn state, not the SentClientRequest state_29-1-2018_21-7-59-526$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._29-1-2018_21-7-59-624$
+servidor ejecutando en el puerto 3000_29-1-2018_21-8-23-158$
+servidor ejecutando en el puerto 3000_30-1-2018_8-1-2-903$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_8-1-4-90$
+servidor ejecutando en el puerto 3000_30-1-2018_8-1-13-490$
+servidor ejecutando en el puerto 3000_30-1-2018_8-5-39-567$
+servidor ejecutando en el puerto 3000_30-1-2018_8-6-41-3$
+RequestError: Requests can only be made in the LoggedIn state, not the SentLogin7WithStandardLogin state_30-1-2018_8-6-50-996$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_8-6-51-136$
+servidor ejecutando en el puerto 3000_30-1-2018_8-7-16-786$
+RequestError: Incorrect syntax near the keyword 'VALUES'._30-1-2018_8-7-18-153$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_8-7-18-923$
+servidor ejecutando en el puerto 3000_30-1-2018_8-8-18-472$
+servidor ejecutando en el puerto 3000_30-1-2018_8-9-34-360$
+servidor ejecutando en el puerto 3000_30-1-2018_8-10-25-431$
+servidor ejecutando en el puerto 3000_30-1-2018_8-21-43-830$
+servidor ejecutando en el puerto 3000_30-1-2018_8-22-59-709$
+servidor ejecutando en el puerto 3000_30-1-2018_8-23-25-944$
+servidor ejecutando en el puerto 3000_30-1-2018_8-23-47-510$
+RequestError: Requests can only be made in the LoggedIn state, not the SentLogin7WithStandardLogin state_30-1-2018_8-23-50-856$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_8-23-50-996$
+servidor ejecutando en el puerto 3000_30-1-2018_8-24-21-56$
+servidor ejecutando en el puerto 3000_30-1-2018_9-55-29-495$
+servidor ejecutando en el puerto 3000_30-1-2018_10-10-58-583$
+servidor ejecutando en el puerto 3000_30-1-2018_10-11-40-59$
+servidor ejecutando en el puerto 3000_30-1-2018_10-12-5-624$
+servidor ejecutando en el puerto 3000_30-1-2018_10-55-29-825$
+servidor ejecutando en el puerto 3000_30-1-2018_11-0-59-415$
+servidor ejecutando en el puerto 3000_30-1-2018_11-2-5-394$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-2-19-711$
+servidor ejecutando en el puerto 3000_30-1-2018_11-3-21-617$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-3-23-850$
+servidor ejecutando en el puerto 3000_30-1-2018_11-6-7-459$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-6-8-719$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-6-9-598$
+servidor ejecutando en el puerto 3000_30-1-2018_11-6-53-639$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-7-5-714$
+servidor ejecutando en el puerto 3000_30-1-2018_11-8-17-101$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-8-18-891$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-8-19-280$
+servidor ejecutando en el puerto 3000_30-1-2018_11-10-38-691$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-10-40-471$
+RequestError: Incorrect syntax near '>'._30-1-2018_11-10-40-721$
+servidor ejecutando en el puerto 3000_30-1-2018_11-11-8-14$
+RequestError: Incorrect syntax near ','._30-1-2018_11-16-3-324$
+servidor ejecutando en el puerto 3000_30-1-2018_11-16-49-687$
+RequestError: Incorrect syntax near ','._30-1-2018_11-19-58-608$
+servidor ejecutando en el puerto 3000_30-1-2018_11-20-15-605$
+RequestError: Incorrect syntax near ','._30-1-2018_11-32-4-605$
+servidor ejecutando en el puerto 3000_30-1-2018_11-32-24-343$
+RequestError: Incorrect syntax near ','._30-1-2018_11-32-38-927$
+servidor ejecutando en el puerto 3000_30-1-2018_11-33-47-872$
+RequestError: Incorrect syntax near '<'._30-1-2018_11-34-57-242$
+servidor ejecutando en el puerto 3000_30-1-2018_11-37-48-261$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-39-23-89$
+servidor ejecutando en el puerto 3000_30-1-2018_11-39-52-697$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-39-54-877$
+servidor ejecutando en el puerto 3000_30-1-2018_11-40-14-10$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-40-15-227$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-40-16-105$
+servidor ejecutando en el puerto 3000_30-1-2018_11-40-59-11$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-41-0-216$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-41-1-109$
+servidor ejecutando en el puerto 3000_30-1-2018_11-43-51-148$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-43-52-370$
+servidor ejecutando en el puerto 3000_30-1-2018_11-44-19-182$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_11-45-47-579$
+servidor ejecutando en el puerto 3000_30-1-2018_11-47-27-676$
+RequestError: Requests can only be made in the LoggedIn state, not the LoggedInSendingInitialSql state_30-1-2018_11-47-40-460$
+servidor ejecutando en el puerto 3000_30-1-2018_11-51-37-816$
+servidor ejecutando en el puerto 3000_30-1-2018_11-52-47-404$
+servidor ejecutando en el puerto 3000_30-1-2018_11-53-28-675$
+servidor ejecutando en el puerto 3000_30-1-2018_11-54-12-992$
+servidor ejecutando en el puerto 3000_30-1-2018_11-54-52-734$
+RequestError: Incorrect syntax near '<'._30-1-2018_11-55-45-690$
+servidor ejecutando en el puerto 3000_30-1-2018_12-3-31-829$
+servidor ejecutando en el puerto 3000_30-1-2018_12-52-7-549$
+servidor ejecutando en el puerto 3000_30-1-2018_12-55-42-517$
+servidor ejecutando en el puerto 3000_30-1-2018_12-58-8-925$
+servidor ejecutando en el puerto 3000_30-1-2018_12-58-48-603$
+RequestError: Incorrect syntax near '<'._30-1-2018_12-59-20-653$
+servidor ejecutando en el puerto 3000_30-1-2018_13-1-46-567$
+servidor ejecutando en el puerto 3000_30-1-2018_13-8-12-434$
+RequestError: Incorrect syntax near '>'._30-1-2018_13-8-13-457$
+RequestError: Incorrect syntax near '>'._30-1-2018_13-8-14-427$
+servidor ejecutando en el puerto 3000_30-1-2018_13-10-6-494$
+RequestError: Incorrect syntax near '>'._30-1-2018_13-10-7-524$
+RequestError: Incorrect syntax near '>'._30-1-2018_13-10-8-493$
+servidor ejecutando en el puerto 3000_30-1-2018_13-11-16-885$
+RequestError: Incorrect syntax near '>'._30-1-2018_13-11-24-443$
+servidor ejecutando en el puerto 3000_30-1-2018_13-12-39-758$
+servidor ejecutando en el puerto 3000_30-1-2018_13-13-33-220$
+servidor ejecutando en el puerto 3000_30-1-2018_13-14-23-724$
+servidor ejecutando en el puerto 3000_30-1-2018_13-15-49-842$
+RequestError: Incorrect syntax near '<'._30-1-2018_13-16-53-708$
+servidor ejecutando en el puerto 3000_30-1-2018_13-20-45-371$
+servidor ejecutando en el puerto 3000_30-1-2018_14-11-9-568$
+RequestError: Incorrect syntax near '<'._30-1-2018_14-12-24-367$
+servidor ejecutando en el puerto 3000_30-1-2018_14-14-13-992$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_14-15-1-619$
+servidor ejecutando en el puerto 3000_30-1-2018_14-24-45-394$
+RequestError: Timeout: Request failed to complete in 15000ms_30-1-2018_14-39-25-514$
+RequestError: Timeout: Request failed to complete in 15000ms_30-1-2018_14-43-40-212$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_14-56-57-477$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_15-12-13-792$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_15-15-35-517$
+RequestError: Incorrect syntax near '<'._30-1-2018_15-17-45-877$
+RequestError: Incorrect syntax near '>'._30-1-2018_15-23-40-903$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_15-29-13-997$
+RequestError: Incorrect syntax near '>'._30-1-2018_15-38-28-833$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_15-40-50-709$
+RequestError: String or binary data would be truncated._30-1-2018_15-54-39-765$
+RequestError: String or binary data would be truncated._30-1-2018_16-16-7-566$
+RequestError: String or binary data would be truncated._30-1-2018_16-47-47-647$
+RequestError: String or binary data would be truncated._30-1-2018_16-52-10-549$
+RequestError: String or binary data would be truncated._30-1-2018_17-7-5-851$
+RequestError: String or binary data would be truncated._30-1-2018_17-10-3-944$
+RequestError: String or binary data would be truncated._30-1-2018_17-11-8-409$
+RequestError: Unclosed quotation mark after the character string ',null,2.84,0,2.84,18476)'._30-1-2018_17-30-51-976$
+servidor ejecutando en el puerto 3000_30-1-2018_19-2-8-288$
+servidor ejecutando en el puerto 3000_30-1-2018_19-15-39-632$
+RequestError: Violation of PRIMARY KEY constraint 'infoTributaria_PK'. Cannot insert duplicate key in object 'dbo.infoTributaria'._30-1-2018_19-16-17-783$
+servidor ejecutando en el puerto 3000_30-1-2018_19-19-23-258$
+servidor ejecutando en el puerto 3000_30-1-2018_19-22-7-99$
+servidor ejecutando en el puerto 3000_30-1-2018_19-22-41-116$
